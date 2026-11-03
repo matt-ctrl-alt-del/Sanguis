@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://c1sfv3f21d65b"]
+
+[ext_resource type="Texture2D" uid="uid://b6rsmmrqpf0sd" path="res://sprites/blood_transition_transparent-Sheet.png" id="1_d06n5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djaog"]
+atlas = ExtResource("1_d06n5")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdahy"]
+atlas = ExtResource("1_d06n5")
+region = Rect2(1152, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnnyx"]
+atlas = ExtResource("1_d06n5")
+region = Rect2(2304, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soflt"]
+atlas = ExtResource("1_d06n5")
+region = Rect2(3456, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt5pv"]
+atlas = ExtResource("1_d06n5")
+region = Rect2(4608, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsw2j"]
+atlas = ExtResource("1_d06n5")
+region = Rect2(5760, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gfwn"]
+atlas = ExtResource("1_d06n5")
+region = Rect2(6912, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1m7i"]
+atlas = ExtResource("1_d06n5")
+region = Rect2(8064, 0, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_662ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djaog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdahy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnnyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soflt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt5pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsw2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gfwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1m7i")
+}],
+"loop": 0,
+"name": &"fade_in",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1m7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gfwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsw2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt5pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soflt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnnyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdahy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djaog")
+}],
+"loop": 0,
+"name": &"fade_out",
+"speed": 5.0
+}]
+
+[node name="Blood_transition" type="Control" unique_id=199575176]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1587490680]
+sprite_frames = SubResource("SpriteFrames_662ny")
+animation = &"fade_in"
+frame = 7
+frame_progress = 1.0
