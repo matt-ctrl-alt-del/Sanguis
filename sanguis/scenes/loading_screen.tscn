@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b3oje2h35hacr"]
+
+[ext_resource type="FontFile" uid="uid://b8x8abus3a65k" path="res://resoources/Saltblackcombat-Regular.ttf" id="1_ep5rh"]
+[ext_resource type="Script" uid="uid://di64uoqvrry71" path="res://scripts/loading_screen.gd" id="1_ku3bi"]
+[ext_resource type="Texture2D" uid="uid://b28shgf2lvmsy" path="res://sprites/loading_screen_background1.png" id="2_hprjd"]
+
+[node name="loading_screen" type="Control" unique_id=352434981]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ku3bi")
+next_scene = "uid://cjebctcq60eau"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1798204558]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1915617132]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ep5rh")
+theme_override_font_sizes/font_size = 50
+text = "Loading..."
+
+[node name="Control" type="Control" parent="." unique_id=137942774]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=271424218]
+z_index = -1
+texture = ExtResource("2_hprjd")

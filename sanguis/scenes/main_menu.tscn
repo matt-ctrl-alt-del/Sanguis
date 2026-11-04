@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://ca4jih0i1oeou"]
+
+[ext_resource type="FontFile" uid="uid://b8x8abus3a65k" path="res://resoources/Saltblackcombat-Regular.ttf" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://die5tk4tp7ki4" path="res://sprites/icon_button.png" id="2_ekxnf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekxnf"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_wu84c"]
+content_margin_left = 5.0
+color = Color(0.5921569, 0, 0, 1)
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_bqqt6"]
+content_margin_left = 10.0
+color = Color(0.5921569, 0, 0, 1)
+vertical = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcqid"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqqt6"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rtw2f"]
+content_margin_left = 5.0
+color = Color(0.7176471, 0.0627451, 0.14509805, 1)
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8ln24"]
+content_margin_left = 10.0
+color = Color(0.7176471, 0.0627451, 0.14509805, 1)
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ekxnf"]
+content_margin_left = 10.0
+color = Color(0.7176471, 0.0627451, 0.14509805, 1)
+vertical = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wu84c"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jk1qb"]
+content_margin_left = 5.0
+color = Color(0.6509804, 0.050980393, 0.12941177, 1)
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_tbmy8"]
+content_margin_left = 10.0
+color = Color(0.6509804, 0.050980393, 0.12941177, 1)
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_oa1go"]
+content_margin_left = 10.0
+color = Color(0.6509804, 0.050980393, 0.12941177, 1)
+vertical = true
+
+[node name="main_menu" type="Control" unique_id=506729990]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1184059346]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -64.0
+offset_right = 194.0
+offset_bottom = 64.0
+grow_vertical = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 4
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1589005299]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.8980392, 0.10980392, 0.2, 1)
+theme_override_colors/font_pressed_color = Color(0.8980392, 0.10980392, 0.2, 1)
+theme_override_colors/font_hover_color = Color(0.8980392, 0.10980392, 0.2, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8980392, 0.10980392, 0.2, 1)
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 52
+theme_override_icons/icon = ExtResource("2_ekxnf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxLine_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxLine_bqqt6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rcqid")
+text = "Start"
+alignment = 0
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=712442816]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.7176471, 0.0627451, 0.14509805, 1)
+theme_override_colors/font_pressed_color = Color(0.7176471, 0.0627451, 0.14509805, 1)
+theme_override_colors/font_hover_color = Color(0.7182671, 0.06409364, 0.14705098, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.7176471, 0.0627451, 0.14509805, 1)
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bqqt6")
+theme_override_styles/pressed = SubResource("StyleBoxLine_rtw2f")
+theme_override_styles/hover = SubResource("StyleBoxLine_8ln24")
+theme_override_styles/hover_pressed = SubResource("StyleBoxLine_ekxnf")
+text = "  Credits"
+alignment = 0
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=50486076]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.6509804, 0.050980393, 0.12941177, 1)
+theme_override_colors/font_pressed_color = Color(0.6509804, 0.050980393, 0.12941177, 1)
+theme_override_colors/font_hover_color = Color(0.65243983, 0.052445516, 0.12938884, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.6509804, 0.050980393, 0.12941177, 1)
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wu84c")
+theme_override_styles/pressed = SubResource("StyleBoxLine_jk1qb")
+theme_override_styles/hover = SubResource("StyleBoxLine_tbmy8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxLine_oa1go")
+text = "  Exit"
+alignment = 0

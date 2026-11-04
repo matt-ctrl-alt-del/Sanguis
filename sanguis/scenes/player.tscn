@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://def0ax0dj22b0"]
 
 [ext_resource type="Texture2D" uid="uid://lj0ilhex1mtb" path="res://sprites/vampire_character_placeholder.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://q6kmshrqb1f6" path="res://scripts/player.gd" id="1_g2els"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hui80"]
 radius = 11.0
@@ -284,6 +285,7 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=533371727]
+script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=906869941]
 shape = SubResource("CapsuleShape2D_hui80")
@@ -292,3 +294,6 @@ shape = SubResource("CapsuleShape2D_hui80")
 sprite_frames = SubResource("SpriteFrames_662ny")
 animation = &"walk"
 frame_progress = 0.029776553
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1291328120]
+zoom = Vector2(4.5, 4.5)
