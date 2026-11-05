@@ -161,7 +161,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qlg0r")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"crouch",
 "speed": 5.0
 }, {
@@ -237,9 +237,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_31cv2")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"die",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -257,9 +257,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gl8cc")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"jump",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -268,7 +268,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_md1ol")
 }],
-"loop": 1,
+"loop": 2,
 "name": &"take_damage",
 "speed": 5.0
 }, {
@@ -281,7 +281,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=533371727]
@@ -292,8 +292,7 @@ shape = SubResource("CapsuleShape2D_hui80")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1462248123]
 sprite_frames = SubResource("SpriteFrames_662ny")
-animation = &"walk"
-frame_progress = 0.029776553
+animation = &"jump"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1291328120]
 zoom = Vector2(4.5, 4.5)

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cjebctcq60eau"]
 
-[ext_resource type="Script" uid="uid://b36fp1julail5" path="res://scripts/level_1.gd" id="1_5xbjy"]
-[ext_resource type="PackedScene" uid="uid://dsdd5dork52dc" path="res://scenes/map.tscn" id="1_bswci"]
-[ext_resource type="PackedScene" uid="uid://def0ax0dj22b0" path="res://scenes/player.tscn" id="2_rus8k"]
-[ext_resource type="PackedScene" uid="uid://c1sfv3f21d65b" path="res://scenes/blood_transition.tscn" id="4_4nkto"]
+[ext_resource type="Script" uid="uid://b36fp1julail5" path="res://scripts/level_1.gd" id="1_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dsdd5dork52dc" path="res://scenes/map.tscn" id="2_iywne"]
+[ext_resource type="PackedScene" uid="uid://def0ax0dj22b0" path="res://scenes/player.tscn" id="3_p57ef"]
+[ext_resource type="PackedScene" uid="uid://c1sfv3f21d65b" path="res://scenes/blood_transition.tscn" id="4_u5sy4"]
 
 [sub_resource type="Gradient" id="Gradient_pa8r4"]
 offsets = PackedFloat32Array(0.28915662, 0.6807229)
@@ -65,18 +65,19 @@ emission_box_extents = Vector3(1, 1, 1)
 gravity = Vector3(0, 150, 0)
 color_ramp = SubResource("GradientTexture1D_hui80")
 
-[node name="level1" type="Node2D" unique_id=1597199877]
+[node name="game" type="Node2D" unique_id=1597199877]
 modulate = Color(0.65834004, 0.6583399, 0.6583399, 1)
-script = ExtResource("1_5xbjy")
+script = ExtResource("1_lbhrr")
 
-[node name="map" parent="." unique_id=1266910233 instance=ExtResource("1_bswci")]
+[node name="map" parent="." unique_id=1266910233 instance=ExtResource("2_iywne")]
 
-[node name="player" parent="." unique_id=533371727 instance=ExtResource("2_rus8k")]
-position = Vector2(149, 240.99998)
+[node name="player" parent="." unique_id=533371727 instance=ExtResource("3_p57ef")]
+position = Vector2(643, 269)
 scale = Vector2(0.7, 0.7)
 
 [node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1376601956]
-z_index = 3
+z_index = 2
+position = Vector2(-2.8571167, -1.5258789e-05)
 energy = 5.85
 shadow_enabled = true
 shadow_filter = 2
@@ -84,7 +85,7 @@ texture = SubResource("GradientTexture2D_662ny")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=149725808]
 
-[node name="Blood_transition" parent="CanvasLayer" unique_id=199575176 instance=ExtResource("4_4nkto")]
+[node name="Blood_transition" parent="CanvasLayer" unique_id=199575176 instance=ExtResource("4_u5sy4")]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -174,6 +175,56 @@ process_material = SubResource("ParticleProcessMaterial_005ff")
 
 [node name="GPUParticles2D4" type="GPUParticles2D" parent="Particles/Dust" unique_id=820232948]
 position = Vector2(3, 510)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_005ff")
+
+[node name="GPUParticles2D8" type="GPUParticles2D" parent="Particles/Dust" unique_id=136313938]
+position = Vector2(636, 315)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_005ff")
+
+[node name="GPUParticles2D9" type="GPUParticles2D" parent="Particles/Dust" unique_id=1878919217]
+position = Vector2(752, 313)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_005ff")
+
+[node name="GPUParticles2D10" type="GPUParticles2D" parent="Particles/Dust" unique_id=365322174]
+position = Vector2(954, 311)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_005ff")
+
+[node name="GPUParticles2D11" type="GPUParticles2D" parent="Particles/Dust" unique_id=897624413]
+position = Vector2(1109, 313)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_005ff")
+
+[node name="GPUParticles2D12" type="GPUParticles2D" parent="Particles/Dust" unique_id=780445039]
+position = Vector2(588, 218)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_005ff")
+
+[node name="GPUParticles2D13" type="GPUParticles2D" parent="Particles/Dust" unique_id=1350388443]
+position = Vector2(853, 219)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_005ff")
+
+[node name="GPUParticles2D14" type="GPUParticles2D" parent="Particles/Dust" unique_id=1984781134]
+position = Vector2(629, 93)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_005ff")
+
+[node name="GPUParticles2D15" type="GPUParticles2D" parent="Particles/Dust" unique_id=196597099]
+position = Vector2(1048, 93)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_005ff")
+
+[node name="GPUParticles2D16" type="GPUParticles2D" parent="Particles/Dust" unique_id=174848692]
+position = Vector2(720, -8)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_005ff")
+
+[node name="GPUParticles2D17" type="GPUParticles2D" parent="Particles/Dust" unique_id=515163199]
+position = Vector2(992, -8)
 amount = 3
 process_material = SubResource("ParticleProcessMaterial_005ff")
 
