@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://1bbvyn7kcv4s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_662ny"]
+size = Vector2(81, 20)
+
+[node name="killzone_lava" type="Area2D" unique_id=364174265]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=326965501]
+shape = SubResource("RectangleShape2D_662ny")

@@ -239,7 +239,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"die",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -285,14 +285,17 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=533371727]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=906869941]
 shape = SubResource("CapsuleShape2D_hui80")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1462248123]
+process_mode = 3
 sprite_frames = SubResource("SpriteFrames_662ny")
-animation = &"jump"
+animation = &"die"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1291328120]
 zoom = Vector2(4.5, 4.5)

@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cjebctcq60eau"]
 
-[ext_resource type="Script" uid="uid://b36fp1julail5" path="res://scripts/level_1.gd" id="1_lbhrr"]
+[ext_resource type="Script" uid="uid://b36fp1julail5" path="res://scripts/game.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dsdd5dork52dc" path="res://scenes/map.tscn" id="2_iywne"]
 [ext_resource type="PackedScene" uid="uid://def0ax0dj22b0" path="res://scenes/player.tscn" id="3_p57ef"]
 [ext_resource type="PackedScene" uid="uid://c1sfv3f21d65b" path="res://scenes/blood_transition.tscn" id="4_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://1bbvyn7kcv4s" path="res://scenes/killzone_lava.tscn" id="5_iywne"]
+[ext_resource type="FontFile" uid="uid://b8x8abus3a65k" path="res://resoources/Saltblackcombat-Regular.ttf" id="5_p57ef"]
 
 [sub_resource type="Gradient" id="Gradient_pa8r4"]
 offsets = PackedFloat32Array(0.28915662, 0.6807229)
@@ -11,59 +13,10 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_662ny"]
 gradient = SubResource("Gradient_pa8r4")
+width = 128
+height = 128
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="Gradient" id="Gradient_5xbjy"]
-colors = PackedColorArray(0.8117647, 0.1254902, 0, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_5xbjy"]
-gradient = SubResource("Gradient_5xbjy")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5xbjy"]
-particle_flag_disable_z = true
-emission_shape_scale = Vector3(30, 1, 1)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-gravity = Vector3(0, 40, 0)
-color_ramp = SubResource("GradientTexture1D_5xbjy")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4nkto"]
-particle_flag_disable_z = true
-emission_shape_scale = Vector3(30, 1, 1)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-gravity = Vector3(0, -40, 0)
-color_ramp = SubResource("GradientTexture1D_5xbjy")
-
-[sub_resource type="Gradient" id="Gradient_4nkto"]
-colors = PackedColorArray(0.9372549, 0, 0, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_fcfvj"]
-gradient = SubResource("Gradient_4nkto")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_662ny"]
-particle_flag_disable_z = true
-gravity = Vector3(0, 200, 0)
-linear_accel_min = -100.0
-linear_accel_max = -84.94
-color = Color(1, 0.3019608, 0, 1)
-color_ramp = SubResource("GradientTexture1D_fcfvj")
-
-[sub_resource type="Gradient" id="Gradient_fcfvj"]
-offsets = PackedFloat32Array(0, 0.9672131)
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_hui80"]
-gradient = SubResource("Gradient_fcfvj")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_005ff"]
-particle_flag_disable_z = true
-emission_shape_scale = Vector3(20, 1, 1)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-gravity = Vector3(0, 150, 0)
-color_ramp = SubResource("GradientTexture1D_hui80")
 
 [node name="game" type="Node2D" unique_id=1597199877]
 modulate = Color(0.65834004, 0.6583399, 0.6583399, 1)
@@ -72,13 +25,16 @@ script = ExtResource("1_lbhrr")
 [node name="map" parent="." unique_id=1266910233 instance=ExtResource("2_iywne")]
 
 [node name="player" parent="." unique_id=533371727 instance=ExtResource("3_p57ef")]
-position = Vector2(643, 269)
+position = Vector2(-143.99994, 621)
 scale = Vector2(0.7, 0.7)
 
 [node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1376601956]
 z_index = 2
 position = Vector2(-2.8571167, -1.5258789e-05)
-energy = 5.85
+color = Color(1, 0, 0, 1)
+energy = 2.5
+range_z_min = -4096
+range_layer_min = -1000
 shadow_enabled = true
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_662ny")
@@ -86,154 +42,35 @@ texture = SubResource("GradientTexture2D_662ny")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=149725808]
 
 [node name="Blood_transition" parent="CanvasLayer" unique_id=199575176 instance=ExtResource("4_u5sy4")]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 
-[node name="Particles" type="Node" parent="." unique_id=387579689]
+[node name="DiedLabel" type="Label" parent="CanvasLayer" unique_id=1177951910]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_right = 94.0
+offset_bottom = 86.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_p57ef")
+theme_override_font_sizes/font_size = 56
+text = "YOU DIED!"
 
-[node name="Lava1" type="Node" parent="Particles" unique_id=1612814463]
+[node name="Killzones" type="Node" parent="." unique_id=1093957074]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Particles/Lava1" unique_id=1525547862]
-z_index = 2
-position = Vector2(-15, 225)
-amount = 20
-speed_scale = 0.3
-process_material = SubResource("ParticleProcessMaterial_5xbjy")
+[node name="killzone_lava" parent="Killzones" unique_id=364174265 instance=ExtResource("5_iywne")]
+position = Vector2(472, 635)
+collision_layer = 2
+collision_mask = 2
 
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="Particles/Lava1" unique_id=162769902]
-z_index = 2
-position = Vector2(-17, 224)
-amount = 5
-speed_scale = 0.3
-process_material = SubResource("ParticleProcessMaterial_4nkto")
+[node name="killzone_lava2" parent="Killzones" unique_id=1761072093 instance=ExtResource("5_iywne")]
+position = Vector2(-16, 239)
+collision_layer = 2
+collision_mask = 2
 
-[node name="Lava2" type="Node" parent="Particles" unique_id=1199107447]
-
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="Particles/Lava2" unique_id=1013104364]
-position = Vector2(474, 625)
-amount = 20
-speed_scale = 0.3
-process_material = SubResource("ParticleProcessMaterial_5xbjy")
-
-[node name="GPUParticles2D4" type="GPUParticles2D" parent="Particles/Lava2" unique_id=1207303688]
-position = Vector2(472, 624)
-amount = 5
-speed_scale = 0.3
-process_material = SubResource("ParticleProcessMaterial_4nkto")
-
-[node name="Dripping_Lava" type="Node" parent="Particles" unique_id=2068569568]
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Particles/Dripping_Lava" unique_id=1548530699]
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_662ny")
-
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="Particles/Dripping_Lava" unique_id=1782714935]
-position = Vector2(115, 159)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_662ny")
-
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="Particles/Dripping_Lava" unique_id=1603503292]
-position = Vector2(17, 432)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_662ny")
-
-[node name="GPUParticles2D4" type="GPUParticles2D" parent="Particles/Dripping_Lava" unique_id=2033431193]
-position = Vector2(-182, 351)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_662ny")
-
-[node name="GPUParticles2D5" type="GPUParticles2D" parent="Particles/Dripping_Lava" unique_id=1306499862]
-position = Vector2(224, 96)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_662ny")
-
-[node name="Dust" type="Node" parent="Particles" unique_id=1906897636]
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Particles/Dust" unique_id=1506056604]
-position = Vector2(-69, 593)
-amount = 1
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="Particles/Dust" unique_id=1145906591]
-position = Vector2(-164, 607)
-amount = 1
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D6" type="GPUParticles2D" parent="Particles/Dust" unique_id=672864998]
-position = Vector2(135, 592)
-amount = 1
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="Particles/Dust" unique_id=1711593426]
-position = Vector2(-48, 510)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D4" type="GPUParticles2D" parent="Particles/Dust" unique_id=820232948]
-position = Vector2(3, 510)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D8" type="GPUParticles2D" parent="Particles/Dust" unique_id=136313938]
-position = Vector2(636, 315)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D9" type="GPUParticles2D" parent="Particles/Dust" unique_id=1878919217]
-position = Vector2(752, 313)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D10" type="GPUParticles2D" parent="Particles/Dust" unique_id=365322174]
-position = Vector2(954, 311)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D11" type="GPUParticles2D" parent="Particles/Dust" unique_id=897624413]
-position = Vector2(1109, 313)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D12" type="GPUParticles2D" parent="Particles/Dust" unique_id=780445039]
-position = Vector2(588, 218)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D13" type="GPUParticles2D" parent="Particles/Dust" unique_id=1350388443]
-position = Vector2(853, 219)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D14" type="GPUParticles2D" parent="Particles/Dust" unique_id=1984781134]
-position = Vector2(629, 93)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D15" type="GPUParticles2D" parent="Particles/Dust" unique_id=196597099]
-position = Vector2(1048, 93)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D16" type="GPUParticles2D" parent="Particles/Dust" unique_id=174848692]
-position = Vector2(720, -8)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D17" type="GPUParticles2D" parent="Particles/Dust" unique_id=515163199]
-position = Vector2(992, -8)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D5" type="GPUParticles2D" parent="Particles/Dust" unique_id=248068023]
-position = Vector2(60, 510)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
-
-[node name="GPUParticles2D7" type="GPUParticles2D" parent="Particles/Dust" unique_id=37008545]
-position = Vector2(201, 479)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_005ff")
+[connection signal="body_entered" from="Killzones/killzone_lava" to="." method="_on_killzone_lava_body_entered"]
+[connection signal="body_entered" from="Killzones/killzone_lava2" to="." method="_on_killzone_lava_2_body_entered"]

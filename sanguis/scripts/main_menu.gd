@@ -14,7 +14,7 @@ func _on_start_pressed() -> void:
 	$CanvasLayer/Blood_transition.show()
 	$CanvasLayer/Blood_transition/AnimatedSprite2D.play("fade_in")
 	await $CanvasLayer/Blood_transition/AnimatedSprite2D.animation_finished
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn") 
+	get_tree().change_scene_to_file("res://scenes/game.tscn") 
 
 func _on_options_pressed() -> void:
 	$CanvasLayer/Fade_transition.show()
