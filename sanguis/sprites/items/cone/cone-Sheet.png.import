@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lj0ilhex1mtb"
-path="res://.godot/imported/vampire_character_placeholder.png-857a5336166903b1cc888433be79f7f2.ctex"
+uid="uid://bnssrylpsqipk"
+path="res://.godot/imported/cone-Sheet.png-f61204280f39ebb5937e24488002a1cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/vampire_character_placeholder.png"
-dest_files=["res://.godot/imported/vampire_character_placeholder.png-857a5336166903b1cc888433be79f7f2.ctex"]
+source_file="res://sprites/items/cone/cone-Sheet.png"
+dest_files=["res://.godot/imported/cone-Sheet.png-f61204280f39ebb5937e24488002a1cc.ctex"]
 
 [params]
 

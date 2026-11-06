@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1v5g4ga1meow"
-path="res://.godot/imported/sanguis_splash1-Sheet.png-80a72fd8a230f5218b669d2c62422b3d.ctex"
+uid="uid://hmsbyqv7l3nf"
+path="res://.godot/imported/blood-Sheet.png-0d9e921ca76d78c543599445e9b03384.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sanguis_splash1-Sheet.png"
-dest_files=["res://.godot/imported/sanguis_splash1-Sheet.png-80a72fd8a230f5218b669d2c62422b3d.ctex"]
+source_file="res://sprites/items/blood/blood-Sheet.png"
+dest_files=["res://.godot/imported/blood-Sheet.png-0d9e921ca76d78c543599445e9b03384.ctex"]
 
 [params]
 

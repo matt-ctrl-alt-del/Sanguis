@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpwsweioabdvh"
-path="res://.godot/imported/prlxbg.png-729021022c758194d60e1d35f2ce9c4c.ctex"
+uid="uid://bshylrrbwvhve"
+path="res://.godot/imported/diamondred.png-78426104f242a7cbbba1ed650b99ed5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/prlxbg.png"
-dest_files=["res://.godot/imported/prlxbg.png-729021022c758194d60e1d35f2ce9c4c.ctex"]
+source_file="res://sprites/items/diamond/diamondred.png"
+dest_files=["res://.godot/imported/diamondred.png-78426104f242a7cbbba1ed650b99ed5d.ctex"]
 
 [params]
 

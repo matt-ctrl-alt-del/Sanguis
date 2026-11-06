@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3r4081vs3ire"
-path="res://.godot/imported/prlxbg2.png-e16068fd7d6e8aedd7dc9f6cf247804c.ctex"
+uid="uid://criil1qayjruw"
+path="res://.godot/imported/sanguis_splash1-Sheet1.png-bb0ff2c82778be89ebad2d29375fb961.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/prlxbg2.png"
-dest_files=["res://.godot/imported/prlxbg2.png-e16068fd7d6e8aedd7dc9f6cf247804c.ctex"]
+source_file="res://sprites/ui/sanguis_splash1-Sheet1.png"
+dest_files=["res://.godot/imported/sanguis_splash1-Sheet1.png-bb0ff2c82778be89ebad2d29375fb961.ctex"]
 
 [params]
 

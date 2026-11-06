@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://criil1qayjruw"
-path="res://.godot/imported/sanguis_splash1-Sheet1.png-c99ab99eba010fb284086b16118cc0e9.ctex"
+uid="uid://dged5owipnnyj"
+path="res://.godot/imported/diamond-Sheet.png-e613ba6153326ec6722c7a4c5d850928.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sanguis_splash1-Sheet1.png"
-dest_files=["res://.godot/imported/sanguis_splash1-Sheet1.png-c99ab99eba010fb284086b16118cc0e9.ctex"]
+source_file="res://sprites/items/diamond/diamond-Sheet.png"
+dest_files=["res://.godot/imported/diamond-Sheet.png-e613ba6153326ec6722c7a4c5d850928.ctex"]
 
 [params]
 

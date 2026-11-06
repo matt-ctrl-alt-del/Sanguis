@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d3io85j0hxxnb"]
+
+[ext_resource type="Texture2D" uid="uid://pvi05wrcmi4k" path="res://sprites/items/cone/conered.png" id="1_1d8ks"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1t02m"]
+radius = 7.071068
+
+[node name="cone" type="Area2D" unique_id=950048496]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=589887021]
+texture = ExtResource("1_1d8ks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351892011]
+shape = SubResource("CircleShape2D_1t02m")

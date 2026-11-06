@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dx4n76yjrlk46"]
+
+[ext_resource type="Texture2D" uid="uid://bac0nc260x55u" path="res://sprites/items/cube/cubered.png" id="1_1t02m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3wdg"]
+size = Vector2(14, 14)
+
+[node name="cube" type="Area2D" unique_id=717928541]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1078693870]
+shape = SubResource("RectangleShape2D_j3wdg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=155719946]
+texture = ExtResource("1_1t02m")

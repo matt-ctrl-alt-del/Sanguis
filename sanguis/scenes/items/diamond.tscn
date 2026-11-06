@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://db1xtutt38fqa"]
+
+[ext_resource type="Texture2D" uid="uid://bshylrrbwvhve" path="res://sprites/items/diamond/diamondred.png" id="1_j3wdg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c6qp"]
+size = Vector2(14, 14)
+
+[node name="diamond" type="Area2D" unique_id=1888615982]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1628502854]
+shape = SubResource("RectangleShape2D_4c6qp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2088562593]
+texture = ExtResource("1_j3wdg")

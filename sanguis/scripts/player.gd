@@ -5,7 +5,7 @@ const JUMP_VELOCITY = -250.0
 
 func _process(delta: float) -> void:
 	if is_on_floor() == false:
-		$AnimatedSprite2D.play('jump")')
+		$AnimatedSprite2D.play("jump")
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

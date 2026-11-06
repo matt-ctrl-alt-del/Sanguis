@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bedccuci2ttcm"
-path="res://.godot/imported/vampire_character_placeholdert.png-835e2f65fce75294a05268b44881de63.ctex"
+uid="uid://dmf85cdeo6uiu"
+path="res://.godot/imported/diamond-Sheet.jpg-6dcd11dd4d84602e95b7aa8a81c6ec0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/vampire_character_placeholdert.png"
-dest_files=["res://.godot/imported/vampire_character_placeholdert.png-835e2f65fce75294a05268b44881de63.ctex"]
+source_file="res://sprites/items/diamond/diamond-Sheet.jpg"
+dest_files=["res://.godot/imported/diamond-Sheet.jpg-6dcd11dd4d84602e95b7aa8a81c6ec0d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddkavpgyoeqle"
-path="res://.godot/imported/tilemap_placeholder.png-1bb16bf206b1d070517d4c4b48eeb0de.ctex"
+uid="uid://bedccuci2ttcm"
+path="res://.godot/imported/vampire_character_placeholdert.png-ed325c72427a0bbcbe7ab560310c2730.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tilemap_placeholder.png"
-dest_files=["res://.godot/imported/tilemap_placeholder.png-1bb16bf206b1d070517d4c4b48eeb0de.ctex"]
+source_file="res://sprites/characters/vampire_character_placeholdert.png"
+dest_files=["res://.godot/imported/vampire_character_placeholdert.png-ed325c72427a0bbcbe7ab560310c2730.ctex"]
 
 [params]
 

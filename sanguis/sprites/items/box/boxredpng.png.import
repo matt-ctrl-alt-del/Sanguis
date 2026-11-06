@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6rsmmrqpf0sd"
-path="res://.godot/imported/blood_transition_transparent-Sheet.png-6493890e3dbc0d6b9851432937e1c50b.ctex"
+uid="uid://dft3ig88hnukl"
+path="res://.godot/imported/boxredpng.png-b7aaae3defca91fb0766c3bef722ca05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/blood_transition_transparent-Sheet.png"
-dest_files=["res://.godot/imported/blood_transition_transparent-Sheet.png-6493890e3dbc0d6b9851432937e1c50b.ctex"]
+source_file="res://sprites/items/box/boxredpng.png"
+dest_files=["res://.godot/imported/boxredpng.png-b7aaae3defca91fb0766c3bef722ca05.ctex"]
 
 [params]
 
