@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dsdd5dork52dc"]
 
-[ext_resource type="Texture2D" path="res://sprites/tilemap_placeholder.png" id="1_4xfga"]
-[ext_resource type="Texture2D" path="res://sprites/prlxbg3.png" id="2_0cso3"]
-[ext_resource type="Texture2D" path="res://sprites/prlxbg2.png" id="3_2klcf"]
-[ext_resource type="Texture2D" path="res://sprites/prlxbg.png" id="4_2lpho"]
+[ext_resource type="Texture2D" uid="uid://ddkavpgyoeqle" path="res://sprites/map/tilemap_placeholder.png" id="1_4xfga"]
+[ext_resource type="Texture2D" uid="uid://c708v0dkqmpr3" path="res://sprites/map/prlxbg3.png" id="2_0cso3"]
+[ext_resource type="Texture2D" uid="uid://b3r4081vs3ire" path="res://sprites/map/prlxbg2.png" id="3_2klcf"]
+[ext_resource type="Texture2D" uid="uid://dpwsweioabdvh" path="res://sprites/map/prlxbg.png" id="4_2lpho"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0cso3"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

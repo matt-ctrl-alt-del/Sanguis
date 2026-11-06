@@ -1,0 +1,219 @@
+[gd_scene format=3 uid="uid://cmyvnu63yrcjk"]
+
+[ext_resource type="Texture2D" path="res://sprites/sanguis_splash1-Sheet1.png" id="2_y0w4g"]
+[ext_resource type="Texture2D" path="res://sprites/matt_not_found_splash-Sheet.png" id="3_ujlye"]
+[ext_resource type="PackedScene" uid="uid://ol8ra8p82q2t" path="res://scenes/Fade_transition.tscn" id="4_d0ruw"]
+
+[sub_resource type="GDScript" id="GDScript_ngfkr"]
+script/source = "extends Control
+
+func _ready() -> void:
+	$matt_not_found.hide()
+	$Godot.play(\"godot\")
+	await get_tree().create_timer(5.0).timeout
+	$matt_not_found.show()
+	$Godot.hide()
+	$matt_not_found.play(\"matt_not_found\")
+	await get_tree().create_timer(4.0).timeout
+	print(\"done\")
+	$CanvasLayer/Fade_transition/AnimationPlayer.play(\"fade_in\")
+	await $CanvasLayer/Fade_transition/AnimationPlayer.animation_finished
+	get_tree().change_scene_to_file(\"res://scenes/main_menu.tscn\")
+
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mj2l"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbcv6"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 648, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2ut7"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 1296, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5osyx"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 1944, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhol4"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 2592, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4c0s"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 3240, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vob37"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 3888, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w85c8"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 4536, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lentl"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 5184, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x6pt"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 5832, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fal6"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 6480, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvxtc"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 7128, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyelg"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 7776, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ti7v"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 8424, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_os25f"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 9072, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2km5"]
+atlas = ExtResource("2_y0w4g")
+region = Rect2(0, 9720, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5uxg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mj2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbcv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2ut7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5osyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhol4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4c0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vob37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w85c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lentl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x6pt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fal6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvxtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyelg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ti7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_os25f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2km5")
+}],
+"loop": 0,
+"name": &"godot",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3q4f"]
+atlas = ExtResource("3_ujlye")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi2k0"]
+atlas = ExtResource("3_ujlye")
+region = Rect2(1152, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wsj5"]
+atlas = ExtResource("3_ujlye")
+region = Rect2(2304, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y45tq"]
+atlas = ExtResource("3_ujlye")
+region = Rect2(3456, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvhjj"]
+atlas = ExtResource("3_ujlye")
+region = Rect2(4608, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgw8v"]
+atlas = ExtResource("3_ujlye")
+region = Rect2(5760, 0, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dla5v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3q4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi2k0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wsj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y45tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvhjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgw8v")
+}],
+"loop": 0,
+"name": &"matt_not_found",
+"speed": 5.0
+}]
+
+[node name="splash_screen2" type="Control" unique_id=324163700]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ngfkr")
+
+[node name="Godot" type="AnimatedSprite2D" parent="." unique_id=377766547]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_c5uxg")
+animation = &"godot"
+
+[node name="matt_not_found" type="AnimatedSprite2D" parent="." unique_id=1480446579]
+sprite_frames = SubResource("SpriteFrames_dla5v")
+animation = &"matt_not_found"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1212696109]
+
+[node name="Fade_transition" parent="CanvasLayer" unique_id=1530767139 instance=ExtResource("4_d0ruw")]

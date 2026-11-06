@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://b8x8abus3a65k" path="res://resoources/Saltblackcombat-Regular.ttf" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://deuq15nyn8t0f" path="res://scripts/main_menu.gd" id="1_wu84c"]
-[ext_resource type="Texture2D" uid="uid://die5tk4tp7ki4" path="res://sprites/icon_button.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://die5tk4tp7ki4" path="res://sprites/ui/icon_button.png" id="3_8ln24"]
 [ext_resource type="PackedScene" uid="uid://c1sfv3f21d65b" path="res://scenes/blood_transition.tscn" id="4_8ln24"]
 [ext_resource type="PackedScene" uid="uid://ol8ra8p82q2t" path="res://scenes/Fade_transition.tscn" id="5_8ln24"]
 
@@ -84,7 +84,7 @@ theme_override_colors/font_hover_color = Color(0.8980392, 0.10980392, 0.2, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.8980392, 0.10980392, 0.2, 1)
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 52
-theme_override_icons/icon = ExtResource("2_ekxnf")
+theme_override_icons/icon = ExtResource("3_8ln24")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ekxnf")
 theme_override_styles/pressed = SubResource("StyleBoxLine_wu84c")
 theme_override_styles/hover = SubResource("StyleBoxLine_bqqt6")
