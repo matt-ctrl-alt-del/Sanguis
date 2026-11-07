@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://c1sfv3f21d65b" path="res://scenes/blood_transition.tscn" id="4_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://1bbvyn7kcv4s" path="res://scenes/killzone_lava.tscn" id="5_iywne"]
 [ext_resource type="FontFile" uid="uid://b8x8abus3a65k" path="res://resoources/Saltblackcombat-Regular.ttf" id="5_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bir3irdxt7mxg" path="res://scenes/tracker.tscn" id="6_dinhu"]
+[ext_resource type="PackedScene" uid="uid://bo4vraly0fu53" path="res://scenes/items/blood.tscn" id="7_gee14"]
+[ext_resource type="PackedScene" uid="uid://i56j540n4q7e" path="res://scenes/items/box.tscn" id="8_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://d3io85j0hxxnb" path="res://scenes/items/cone.tscn" id="9_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://dx4n76yjrlk46" path="res://scenes/items/cube.tscn" id="10_dinhu"]
+[ext_resource type="PackedScene" uid="uid://db1xtutt38fqa" path="res://scenes/items/diamond.tscn" id="11_kvuet"]
 
 [sub_resource type="Gradient" id="Gradient_pa8r4"]
 offsets = PackedFloat32Array(0.28915662, 0.6807229)
@@ -18,6 +24,9 @@ height = 128
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_662ny"]
+size = Vector2(224, 34)
+
 [node name="game" type="Node2D" unique_id=1597199877]
 modulate = Color(0.65834004, 0.6583399, 0.6583399, 1)
 script = ExtResource("1_lbhrr")
@@ -26,7 +35,7 @@ script = ExtResource("1_lbhrr")
 
 [node name="player" parent="." unique_id=533371727 instance=ExtResource("3_p57ef")]
 z_index = 10
-position = Vector2(-50, 614.00006)
+position = Vector2(-84, 629.00006)
 scale = Vector2(0.7, 0.7)
 
 [node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1376601956]
@@ -43,6 +52,7 @@ texture = SubResource("GradientTexture2D_662ny")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=149725808]
 
 [node name="Blood_transition" parent="CanvasLayer" unique_id=199575176 instance=ExtResource("4_u5sy4")]
+z_index = 4096
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -58,8 +68,24 @@ offset_right = 94.0
 offset_bottom = 86.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("5_p57ef")
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 40
 text = "YOU DIED!"
+horizontal_alignment = 1
+
+[node name="HelpLabel" type="Label" parent="CanvasLayer" unique_id=37458684]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -227.5
+offset_right = 227.5
+offset_bottom = 86.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_p57ef")
+theme_override_font_sizes/font_size = 40
+text = "Collect 3 Items To Open Door 1."
+horizontal_alignment = 1
+
+[node name="Tracker" parent="CanvasLayer" unique_id=1921707630 instance=ExtResource("6_dinhu")]
 
 [node name="Killzones" type="Node" parent="." unique_id=1093957074]
 
@@ -73,5 +99,47 @@ position = Vector2(-16, 239)
 collision_layer = 2
 collision_mask = 2
 
+[node name="Items" type="Node" parent="." unique_id=1210466166]
+
+[node name="blood" parent="Items" unique_id=935713999 instance=ExtResource("7_gee14")]
+position = Vector2(76, 248)
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="box" parent="Items" unique_id=244760202 instance=ExtResource("8_0tnpc")]
+position = Vector2(-160, 28)
+collision_layer = 2
+collision_mask = 2
+
+[node name="cone" parent="Items" unique_id=950048496 instance=ExtResource("9_kvpfn")]
+position = Vector2(424, 602)
+collision_layer = 2
+collision_mask = 2
+
+[node name="cube" parent="Items" unique_id=717928541 instance=ExtResource("10_dinhu")]
+position = Vector2(1135, 375)
+collision_layer = 2
+collision_mask = 2
+
+[node name="diamond" parent="Items" unique_id=1888615982 instance=ExtResource("11_kvuet")]
+position = Vector2(1137, 278)
+collision_layer = 2
+collision_mask = 2
+
+[node name="exit" type="Area2D" parent="." unique_id=1758477085]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=483289992]
+position = Vector2(1342, -206)
+shape = SubResource("RectangleShape2D_662ny")
+
 [connection signal="body_entered" from="Killzones/killzone_lava" to="." method="_on_killzone_lava_body_entered"]
 [connection signal="body_entered" from="Killzones/killzone_lava2" to="." method="_on_killzone_lava_2_body_entered"]
+[connection signal="body_entered" from="Items/blood" to="." method="_on_blood_body_entered"]
+[connection signal="body_entered" from="Items/box" to="." method="_on_box_body_entered"]
+[connection signal="body_entered" from="Items/cone" to="." method="_on_cone_body_entered"]
+[connection signal="body_entered" from="Items/cube" to="." method="_on_cube_body_entered"]
+[connection signal="body_entered" from="Items/diamond" to="." method="_on_diamond_body_entered"]
+[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

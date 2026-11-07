@@ -8,6 +8,7 @@ extends Control
 var dots := ["",".","..","...","..","."]
 
 func _ready() -> void:
+	$CanvasLayer/Blood_transition.hide()
 	get_tree().create_timer(loading_duration).timeout.connect(_on_time_up)
 
 func _process(delta: float) -> void:
@@ -16,6 +17,9 @@ func _process(delta: float) -> void:
 	
 func _on_time_up() -> void:
 	if next_scene != "":
+		$CanvasLayer/Blood_transition.show()
+		$CanvasLayer/Blood_transition/AnimatedSprite2D.play("fade_in")
+		await $CanvasLayer/Blood_transition/AnimatedSprite2D.animation_finished
 		get_tree().change_scene_to_file(next_scene)
 	else:
 		print("Error. Add a scene.")

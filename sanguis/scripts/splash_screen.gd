@@ -11,6 +11,8 @@ func _ready() -> void:
 	$godot.hide()
 	$matt_not_found.play("matt_not_found_splash")
 	await get_tree().create_timer(4.0).timeout
+	$CanvasLayer/Fade_transition/AnimationPlayer.play("fade_in")
+	await $CanvasLayer/Fade_transition/AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 

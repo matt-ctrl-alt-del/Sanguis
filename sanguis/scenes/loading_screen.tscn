@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://b8x8abus3a65k" path="res://resoources/Saltblackcombat-Regular.ttf" id="1_ep5rh"]
 [ext_resource type="Script" uid="uid://di64uoqvrry71" path="res://scripts/loading_screen.gd" id="1_ku3bi"]
 [ext_resource type="Texture2D" uid="uid://b28shgf2lvmsy" path="res://sprites/ui/loading_screen_background1.png" id="2_hprjd"]
+[ext_resource type="PackedScene" uid="uid://c1sfv3f21d65b" path="res://scenes/blood_transition.tscn" id="4_5phy8"]
 
 [node name="loading_screen" type="Control" unique_id=352434981]
 layout_mode = 3
@@ -47,3 +48,12 @@ grow_vertical = 2
 [node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=271424218]
 z_index = -1
 texture = ExtResource("2_hprjd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1898274889]
+
+[node name="Blood_transition" parent="CanvasLayer" unique_id=199575176 instance=ExtResource("4_5phy8")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bir3irdxt7mxg"]
+
+[ext_resource type="Texture2D" uid="uid://be4cw6amighih" path="res://sprites/items/blood/blood2.png" id="1_2oy2a"]
+[ext_resource type="Texture2D" uid="uid://pvi05wrcmi4k" path="res://sprites/items/cone/conered.png" id="2_k524b"]
+[ext_resource type="Texture2D" uid="uid://dft3ig88hnukl" path="res://sprites/items/box/boxredpng.png" id="3_2o4v1"]
+[ext_resource type="Texture2D" uid="uid://bac0nc260x55u" path="res://sprites/items/cube/cubered.png" id="4_rep8v"]
+[ext_resource type="Texture2D" uid="uid://bshylrrbwvhve" path="res://sprites/items/diamond/diamondred.png" id="5_i26kx"]
+
+[node name="Tracker" type="Control" unique_id=1921707630]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(20, 30)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1547069222]
+layout_mode = 1
+offset_right = 268.0
+offset_bottom = 64.0
+
+[node name="blood" type="TextureRect" parent="HBoxContainer" unique_id=427561189]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("1_2oy2a")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="cone" type="TextureRect" parent="HBoxContainer" unique_id=165860382]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_k524b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="box" type="TextureRect" parent="HBoxContainer" unique_id=389498275]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("3_2o4v1")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="cube" type="TextureRect" parent="HBoxContainer" unique_id=1033444302]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_rep8v")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="diamond" type="TextureRect" parent="HBoxContainer" unique_id=1678154756]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("5_i26kx")
+expand_mode = 1
+stretch_mode = 4

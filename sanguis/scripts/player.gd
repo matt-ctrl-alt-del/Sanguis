@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 120.0
-const JUMP_VELOCITY = -250.0
+const JUMP_VELOCITY = -255.0
 
 func _process(delta: float) -> void:
 	if is_on_floor() == false:
