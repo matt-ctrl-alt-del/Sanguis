@@ -7,8 +7,16 @@ Credits: Tilemap Template - https://patrik-arts.itch.io/tileset-templates, Chara
 
 My goal for next week is to make the movement WAAY better, improve the ui by adding a pause/about/options screen, add music/audio design, make an npc for the first time, and overall add game juice.
 
+It can be played at: https://matt-not-found.itch.io/sanguis
+
 Controls:
 W - Move up
 A - Move left
 S - Move down
 D - Move right
+
+<img width="1140" height="640" alt="Screenshot From 2026-11-06 22-40-48" src="https://github.com/user-attachments/assets/ddbeddff-b353-4e3e-88b7-089568c00184" />
+<img width="1140" height="640" alt="Screenshot From 2026-11-06 22-40-19" src="https://github.com/user-attachments/assets/45b0ce01-cd46-4ca7-80da-784f4183b107" />
+<img width="1140" height="640" alt="Screenshot From 2026-11-06 22-39-58" src="https://github.com/user-attachments/assets/c6716573-663b-4e41-8955-e474578a4ddb" />
+<img width="1140" height="640" alt="Screenshot From 2026-11-06 22-39-10" src="https://github.com/user-attachments/assets/9805fefb-c375-407e-a2c7-e9a2d7c25d04" />
+<img width="1140" height="640" alt="Screenshot From 2026-11-06 22-38-47" src="https://github.com/user-attachments/assets/c3f95608-7df7-4087-b009-f6a947b9d47f" />
