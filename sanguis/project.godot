@@ -14,6 +14,10 @@ config/name="Sanguis"
 run/main_scene="uid://deegaq13w7u15"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
+[autoload]
+
+Global="*uid://h2ioy1deakok"
+
 [display]
 
 window/stretch/mode="canvas_items"

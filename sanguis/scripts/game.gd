@@ -1,9 +1,11 @@
 extends Node2D
 
 var items_collected := 0
+var time_elapsed := 0.0
 
 func _ready() -> void:
 	get_tree().paused = false
+	$CanvasLayer/TimerLabel.visible = Global.show_timer
 	$player/Camera2D.make_current()
 	$CanvasLayer/Blood_effect_feedback.hide()
 	$CanvasLayer/DiedLabel.hide()
@@ -20,7 +22,9 @@ func _ready() -> void:
 	$CanvasLayer/HelpLabel.hide()
 
 func _process(delta: float) -> void:
-	pass
+	if Global.show_timer:
+		time_elapsed += delta
+		$CanvasLayer/TimerLabel.text = "Time: %.2f" % time_elapsed
 
 func open_door1():
 	if items_collected >= 3:

@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://db1xtutt38fqa" path="res://scenes/items/diamond.tscn" id="11_kvuet"]
 [ext_resource type="Texture2D" uid="uid://bkulr8gujcfha" path="res://sprites/ui/background_progressbar.png" id="11_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://c0wa1i2wa1jpj" path="res://sprites/ui/main_progressbar.png" id="12_264po"]
+[ext_resource type="PackedScene" uid="uid://c7dqbjn5t4f4d" path="res://scenes/pause_menu.tscn" id="13_264po"]
 
 [sub_resource type="Gradient" id="Gradient_pa8r4"]
 offsets = PackedFloat32Array(0.28915662, 0.6807229)
@@ -128,6 +129,21 @@ offset_transform_position = Vector2(20, 115)
 max_value = 5.0
 texture_under = ExtResource("11_ssvqc")
 texture_progress = ExtResource("12_264po")
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1615165541 instance=ExtResource("13_264po")]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=999062903]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_p57ef")
+theme_override_font_sizes/font_size = 25
 
 [node name="Killzones" type="Node" parent="." unique_id=1093957074]
 
