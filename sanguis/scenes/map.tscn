@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c708v0dkqmpr3" path="res://sprites/map/prlxbg3.png" id="2_0cso3"]
 [ext_resource type="Texture2D" uid="uid://b3r4081vs3ire" path="res://sprites/map/prlxbg2.png" id="3_2klcf"]
 [ext_resource type="Texture2D" uid="uid://dpwsweioabdvh" path="res://sprites/map/prlxbg.png" id="4_2lpho"]
+[ext_resource type="Script" uid="uid://cvquknmiqetrk" path="res://scripts/camera_2d.gd" id="5_2klcf"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0cso3"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -2652,7 +2653,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(120, 287), Vector2(120, 340)]
+"values": [Vector2(120, 287), Vector2(120, 360)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jh32y"]
@@ -2689,7 +2690,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(307, 169), Vector2(307, 240)]
+"values": [Vector2(307, 163), Vector2(307, 240)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_blm8a"]
@@ -2737,6 +2738,22 @@ _data = {
 &"RESET": SubResource("Animation_wslke"),
 &"open_door": SubResource("Animation_gw3fx")
 }
+
+[sub_resource type="Gradient" id="Gradient_2klcf"]
+offsets = PackedFloat32Array(0, 0.4262295, 0.6557377, 1)
+colors = PackedColorArray(0.4, 0.23529412, 0.22745098, 1, 0.4, 0.23529412, 0.22745098, 1, 0.64, 0.54117644, 0.5364706, 0.6, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0cso3"]
+gradient = SubResource("Gradient_2klcf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_662ny"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(2.3, 1, 1)
+gravity = Vector3(0, 50, 0)
+scale_min = 0.5
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_0cso3")
 
 [sub_resource type="Animation" id="Animation_n1psn"]
 length = 0.001
@@ -3846,6 +3863,17 @@ libraries/ = SubResource("AnimationLibrary_n1psn")
 
 [node name="Camera2D" type="Camera2D" parent="Door/Door1" unique_id=1058973696]
 zoom = Vector2(3, 3)
+script = ExtResource("5_2klcf")
+
+[node name="Door_Dust" type="GPUParticles2D" parent="Door/Door1" unique_id=1051759809]
+z_index = 1
+position = Vector2(0, 30)
+emitting = false
+amount = 16
+lifetime = 0.6
+explosiveness = 0.9
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_662ny")
 
 [node name="Door2" type="StaticBody2D" parent="Door" unique_id=2103165309]
 position = Vector2(1146, 33)
@@ -3864,3 +3892,14 @@ libraries/ = SubResource("AnimationLibrary_p7tei")
 
 [node name="Camera2D" type="Camera2D" parent="Door/Door2" unique_id=815989421]
 zoom = Vector2(3, 3)
+script = ExtResource("5_2klcf")
+
+[node name="Door_Dust2" type="GPUParticles2D" parent="Door/Door2" unique_id=223817028]
+z_index = 1
+position = Vector2(0, 30)
+emitting = false
+amount = 16
+lifetime = 0.6
+explosiveness = 0.9
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_662ny")

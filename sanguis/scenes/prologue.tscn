@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://dwmxautor3unr"]
 
+[ext_resource type="Script" uid="uid://b1rtphahldy41" path="res://scripts/prologue.gd" id="1_8byya"]
+[ext_resource type="FontFile" uid="uid://b8x8abus3a65k" path="res://resoources/Saltblackcombat-Regular.ttf" id="2_1wrf5"]
+[ext_resource type="Script" uid="uid://bw27gp5dhw0e1" path="res://scripts/prologue_label.gd" id="3_1wrf5"]
+[ext_resource type="PackedScene" uid="uid://ol8ra8p82q2t" path="res://scenes/Fade_transition.tscn" id="3_6e114"]
+
 [node name="Prologue" type="Control" unique_id=2096140412]
 layout_mode = 3
 anchors_preset = 15
@@ -7,13 +12,30 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8byya")
 
-[node name="Label" type="Label" parent="." unique_id=38178991]
-layout_mode = 0
+[node name="Prologue_Label" type="Label" parent="." unique_id=38178991]
+z_index = 100
+layout_mode = 1
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 25.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(30, 30)
+theme_override_colors/font_color = Color(0.50274503, 0.048560202, 8.663535e-07, 1)
+theme_override_fonts/font = ExtResource("2_1wrf5")
+theme_override_font_sizes/font_size = 30
+text = "Test"
+script = ExtResource("3_1wrf5")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1716635070]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1534745096]
+
+[node name="Fade_transition" parent="CanvasLayer" unique_id=1530767139 instance=ExtResource("3_6e114")]

@@ -25,20 +25,30 @@ func _process(delta: float) -> void:
 func open_door1():
 	if items_collected >= 3:
 		$CanvasLayer/HelpLabel.text = "3 Itmes Collected! Door 1 Opened."
-		await get_tree().create_timer(2.0).timeout
+		$map/Door/Door1/Door_Dust.emitting = true
+		$map/Door/Door1/Camera2D.screen_shake(15,8.0)
+		await get_tree().create_timer(1.0).timeout
 		$map/Door/Door1/Camera2D.make_current()
 		await get_tree().create_timer(1.0).timeout
 		$map/Door/Door1/AnimationPlayer.play("open_door")
+		await get_tree().create_timer(4.0).timeout
+		$player/Camera2D.make_current()
+		$map/Door/Door1/Door_Dust.emitting = false
 	else:
 		print("Not enough items.")
 
 func open_door2():
 	if items_collected >= 5:
-		$CanvasLayer/HelpLabel.text = " 5 Itmes Collected! Exit Opened."
-		await get_tree().create_timer(2.0).timeout
+		$CanvasLayer/HelpLabel.text = " 5 Items Collected! Exit Opened."
+		$map/Door/Door2/Door_Dust2.emitting = true
+		$map/Door/Door2/Camera2D.screen_shake(15,8.0)
+		await get_tree().create_timer(1.0).timeout
 		$map/Door/Door2/Camera2D.make_current()
 		await get_tree().create_timer(1.0).timeout
 		$map/Door/Door2/AnimationPlayer.play("open_door")
+		await get_tree().create_timer(4.0).timeout
+		$player/Camera2D.make_current()
+		$map/Door/Door2/Door_Dust2.emitting = false
 	else: 
 		print("Not enough items.")
 
