@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c4ylq5m4wjfny"]
+
+[ext_resource type="Texture2D" uid="uid://b6rsmmrqpf0sd" path="res://sprites/ui/blood_transition_transparent-Sheet.png" id="1_pq6gw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsrmx"]
+atlas = ExtResource("1_pq6gw")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqc6e"]
+atlas = ExtResource("1_pq6gw")
+region = Rect2(1152, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq4lc"]
+atlas = ExtResource("1_pq6gw")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_662ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsrmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqc6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq4lc")
+}],
+"loop": 0,
+"name": &"blood_feedback",
+"speed": 5.0
+}]
+
+[node name="Blood_effect_feedback" type="Control" unique_id=119265112]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=496881205]
+sprite_frames = SubResource("SpriteFrames_662ny")
+animation = &"blood_feedback"

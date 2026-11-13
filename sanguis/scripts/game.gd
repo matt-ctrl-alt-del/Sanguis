@@ -4,6 +4,8 @@ var items_collected := 0
 
 func _ready() -> void:
 	get_tree().paused = false
+	$player/Camera2D.make_current()
+	$CanvasLayer/Blood_effect_feedback.hide()
 	$CanvasLayer/DiedLabel.hide()
 	$CanvasLayer/Tracker/HBoxContainer/blood.modulate.a = 0.25
 	$CanvasLayer/Tracker/HBoxContainer/box.modulate.a = 0.25
@@ -23,7 +25,9 @@ func _process(delta: float) -> void:
 func open_door1():
 	if items_collected >= 3:
 		$CanvasLayer/HelpLabel.text = "3 Itmes Collected! Door 1 Opened."
-		await get_tree().create_timer(5.0).timeout
+		await get_tree().create_timer(2.0).timeout
+		$map/Door/Door1/Camera2D.make_current()
+		await get_tree().create_timer(1.0).timeout
 		$map/Door/Door1/AnimationPlayer.play("open_door")
 	else:
 		print("Not enough items.")
@@ -31,7 +35,9 @@ func open_door1():
 func open_door2():
 	if items_collected >= 5:
 		$CanvasLayer/HelpLabel.text = " 5 Itmes Collected! Exit Opened."
-		await get_tree().create_timer(10.0).timeout
+		await get_tree().create_timer(2.0).timeout
+		$map/Door/Door2/Camera2D.make_current()
+		await get_tree().create_timer(1.0).timeout
 		$map/Door/Door2/AnimationPlayer.play("open_door")
 	else: 
 		print("Not enough items.")
@@ -65,6 +71,11 @@ func _on_blood_body_entered(body: Node2D) -> void:
 	$CanvasLayer/HelpLabel.show()
 	$CanvasLayer/HelpLabel.text = "Items Collected: " + str(items_collected)
 	open_door1()
+	$CanvasLayer/TextureProgressBar.value += 1.0
+	$CanvasLayer/Blood_effect_feedback.show()
+	$CanvasLayer/Blood_effect_feedback/AnimatedSprite2D.play("blood_feedback")
+	await $CanvasLayer/Blood_effect_feedback/AnimatedSprite2D.animation_finished
+	$CanvasLayer/Blood_effect_feedback.hide()
 	$CanvasLayer/Tracker/HBoxContainer/blood.modulate.a = 1.0
 	await get_tree().create_timer(10.0).timeout
 	$CanvasLayer/HelpLabel.hide()
@@ -76,6 +87,11 @@ func _on_box_body_entered(body: Node2D) -> void:
 	$CanvasLayer/HelpLabel.show()
 	$CanvasLayer/HelpLabel.text = "Items Collected: " + str(items_collected)
 	open_door1()
+	$CanvasLayer/TextureProgressBar.value += 1.0
+	$CanvasLayer/Blood_effect_feedback.show()
+	$CanvasLayer/Blood_effect_feedback/AnimatedSprite2D.play("blood_feedback")
+	await $CanvasLayer/Blood_effect_feedback/AnimatedSprite2D.animation_finished
+	$CanvasLayer/Blood_effect_feedback.hide()
 	$CanvasLayer/Tracker/HBoxContainer/box.modulate.a = 1.0
 	await get_tree().create_timer(10.0).timeout
 	$CanvasLayer/HelpLabel.hide()
@@ -87,6 +103,11 @@ func _on_cone_body_entered(body: Node2D) -> void:
 	$CanvasLayer/HelpLabel.show()
 	$CanvasLayer/HelpLabel.text = "Items Collected: " + str(items_collected)
 	open_door1()
+	$CanvasLayer/TextureProgressBar.value += 1.0
+	$CanvasLayer/Blood_effect_feedback.show()
+	$CanvasLayer/Blood_effect_feedback/AnimatedSprite2D.play("blood_feedback")
+	await $CanvasLayer/Blood_effect_feedback/AnimatedSprite2D.animation_finished
+	$CanvasLayer/Blood_effect_feedback.hide()
 	$CanvasLayer/Tracker/HBoxContainer/cone.modulate.a = 1.0
 	await get_tree().create_timer(10.0).timeout
 	$CanvasLayer/HelpLabel.hide()
@@ -98,6 +119,11 @@ func _on_cube_body_entered(body: Node2D) -> void:
 	$CanvasLayer/HelpLabel.show()
 	$CanvasLayer/HelpLabel.text = "Items Collected: " + str(items_collected)
 	open_door2()
+	$CanvasLayer/TextureProgressBar.value += 1.0
+	$CanvasLayer/Blood_effect_feedback.show()
+	$CanvasLayer/Blood_effect_feedback/AnimatedSprite2D.play("blood_feedback")
+	await $CanvasLayer/Blood_effect_feedback/AnimatedSprite2D.animation_finished
+	$CanvasLayer/Blood_effect_feedback.hide()
 	$CanvasLayer/Tracker/HBoxContainer/cube.modulate.a = 1.0
 	await get_tree().create_timer(10.0).timeout
 	$CanvasLayer/HelpLabel.hide()
@@ -109,10 +135,14 @@ func _on_diamond_body_entered(body: Node2D) -> void:
 	$CanvasLayer/HelpLabel.show()
 	$CanvasLayer/HelpLabel.text = "Items Collected: " + str(items_collected)
 	open_door2()
+	$CanvasLayer/TextureProgressBar.value += 1.0
+	$CanvasLayer/Blood_effect_feedback.show()
+	$CanvasLayer/Blood_effect_feedback/AnimatedSprite2D.play("blood_feedback")
+	await $CanvasLayer/Blood_effect_feedback/AnimatedSprite2D.animation_finished
+	$CanvasLayer/Blood_effect_feedback.hide()
 	$CanvasLayer/Tracker/HBoxContainer/diamond.modulate.a = 1.0
 	await get_tree().create_timer(10.0).timeout
 	$CanvasLayer/HelpLabel.hide()
-
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	get_tree().paused = true

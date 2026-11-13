@@ -8,10 +8,16 @@
 [ext_resource type="FontFile" uid="uid://b8x8abus3a65k" path="res://resoources/Saltblackcombat-Regular.ttf" id="5_p57ef"]
 [ext_resource type="PackedScene" uid="uid://bir3irdxt7mxg" path="res://scenes/tracker.tscn" id="6_dinhu"]
 [ext_resource type="PackedScene" uid="uid://bo4vraly0fu53" path="res://scenes/items/blood.tscn" id="7_gee14"]
+[ext_resource type="Script" uid="uid://wg6k3pyqttdf" path="res://scripts/sub_viewport.gd" id="7_ir15t"]
+[ext_resource type="Texture2D" uid="uid://die5tk4tp7ki4" path="res://sprites/ui/icon_button.png" id="7_kvuet"]
+[ext_resource type="Texture2D" uid="uid://cwvd5sdswhu74" path="res://sprites/map/Screenshot From 2026-11-12 20-16-27.png" id="7_trtic"]
 [ext_resource type="PackedScene" uid="uid://i56j540n4q7e" path="res://scenes/items/box.tscn" id="8_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://d3io85j0hxxnb" path="res://scenes/items/cone.tscn" id="9_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://c4ylq5m4wjfny" path="res://scenes/blood_effect_feedback.tscn" id="10_ca42v"]
 [ext_resource type="PackedScene" uid="uid://dx4n76yjrlk46" path="res://scenes/items/cube.tscn" id="10_dinhu"]
 [ext_resource type="PackedScene" uid="uid://db1xtutt38fqa" path="res://scenes/items/diamond.tscn" id="11_kvuet"]
+[ext_resource type="Texture2D" uid="uid://bkulr8gujcfha" path="res://sprites/ui/background_progressbar.png" id="11_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://c0wa1i2wa1jpj" path="res://sprites/ui/main_progressbar.png" id="12_264po"]
 
 [sub_resource type="Gradient" id="Gradient_pa8r4"]
 offsets = PackedFloat32Array(0.28915662, 0.6807229)
@@ -35,7 +41,7 @@ script = ExtResource("1_lbhrr")
 
 [node name="player" parent="." unique_id=533371727 instance=ExtResource("3_p57ef")]
 z_index = 10
-position = Vector2(-84, 629.00006)
+position = Vector2(160.99998, 242.00003)
 scale = Vector2(0.7, 0.7)
 
 [node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1376601956]
@@ -86,6 +92,42 @@ text = "Collect 3 Items To Open Door 1."
 horizontal_alignment = 1
 
 [node name="Tracker" parent="CanvasLayer" unique_id=1921707630 instance=ExtResource("6_dinhu")]
+offset_transform_position = Vector2(10, 30)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=1469500973]
+offset_left = 922.0
+offset_top = 27.0
+offset_right = 1434.0
+offset_bottom = 539.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=20427821]
+handle_input_locally = false
+size = Vector2i(200, 100)
+render_target_update_mode = 4
+script = ExtResource("7_ir15t")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=773512489]
+visible = false
+texture = ExtResource("7_trtic")
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1881941623]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportContainer" unique_id=949133102]
+visible = false
+texture = ExtResource("7_kvuet")
+offset = Vector2(100, 53)
+
+[node name="Blood_effect_feedback" parent="CanvasLayer" unique_id=119265112 instance=ExtResource("10_ca42v")]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=586611655]
+modulate = Color(0.47026944, 0, 0.099758156, 1)
+offset_right = 172.0
+offset_bottom = 42.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(20, 115)
+max_value = 5.0
+texture_under = ExtResource("11_ssvqc")
+texture_progress = ExtResource("12_264po")
 
 [node name="Killzones" type="Node" parent="." unique_id=1093957074]
 
