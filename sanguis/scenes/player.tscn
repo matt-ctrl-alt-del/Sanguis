@@ -284,6 +284,42 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_662ny"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(20, 1, 1)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = 1.0728835e-05
+angle_max = 45.00001
+spread = 157.857
+gravity = Vector3(0, -50, 0)
+
+[sub_resource type="Gradient" id="Gradient_qhqgy"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dqkch"]
+gradient = SubResource("Gradient_qhqgy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qhqgy"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(15, 0.5, 0.5)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = 1.0728835e-05
+angle_max = 45.00001
+spread = 50.0
+flatness = 1.0
+gravity = Vector3(0, -20, 0)
+color_ramp = SubResource("GradientTexture1D_dqkch")
+
 [node name="player" type="CharacterBody2D" unique_id=533371727]
 collision_layer = 3
 collision_mask = 3
@@ -301,3 +337,28 @@ animation = &"jump"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1291328120]
 zoom = Vector2(4.5, 4.5)
 script = ExtResource("3_qhqgy")
+
+[node name="Effect_Cloak" type="GPUParticles2D" parent="." unique_id=50656051]
+modulate = Color(0.22352941, 0.02745098, 0.02745098, 1)
+position = Vector2(0, 15)
+amount = 10
+explosiveness = 0.3
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_662ny")
+
+[node name="Effect_Cloak2" type="GPUParticles2D" parent="." unique_id=905859286]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, 15)
+amount = 10
+explosiveness = 0.3
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_662ny")
+
+[node name="Jump_Particles" type="GPUParticles2D" parent="." unique_id=1524492240]
+position = Vector2(0, 15)
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 0.3
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_qhqgy")

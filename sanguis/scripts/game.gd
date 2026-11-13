@@ -31,6 +31,7 @@ func open_door1():
 		$CanvasLayer/HelpLabel.text = "3 Itmes Collected! Door 1 Opened."
 		$map/Door/Door1/Door_Dust.emitting = true
 		$map/Door/Door1/Camera2D.screen_shake(15,8.0)
+		$map/Door_Dusts/Door_Dust1.emitting = true
 		await get_tree().create_timer(1.0).timeout
 		$map/Door/Door1/Camera2D.make_current()
 		await get_tree().create_timer(1.0).timeout
@@ -38,6 +39,7 @@ func open_door1():
 		await get_tree().create_timer(4.0).timeout
 		$player/Camera2D.make_current()
 		$map/Door/Door1/Door_Dust.emitting = false
+		$map/Door_Dusts/Door_Dust1.emitting = false
 	else:
 		print("Not enough items.")
 
@@ -46,6 +48,7 @@ func open_door2():
 		$CanvasLayer/HelpLabel.text = " 5 Items Collected! Exit Opened."
 		$map/Door/Door2/Door_Dust2.emitting = true
 		$map/Door/Door2/Camera2D.screen_shake(15,8.0)
+		$map/Door_Dusts/Door_Dust2.emitting = true
 		await get_tree().create_timer(1.0).timeout
 		$map/Door/Door2/Camera2D.make_current()
 		await get_tree().create_timer(1.0).timeout
@@ -53,6 +56,7 @@ func open_door2():
 		await get_tree().create_timer(4.0).timeout
 		$player/Camera2D.make_current()
 		$map/Door/Door2/Door_Dust2.emitting = false
+		$map/Door_Dusts/Door_Dust2.emitting = false
 	else: 
 		print("Not enough items.")
 
