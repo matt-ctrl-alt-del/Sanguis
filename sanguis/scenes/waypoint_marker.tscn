@@ -3,9 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://brygskxvpl85e" path="res://sprites/ui/waypoint_marker.png" id="1_ov4de"]
 [ext_resource type="Script" uid="uid://dau5xb0xd2o80" path="res://scripts/waypoint_marker.gd" id="2_otagc"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1kice"]
+light_mode = 1
+
 [node name="WaypointMarker" type="Sprite2D" unique_id=215579915]
 z_index = 4000
 z_as_relative = false
+material = SubResource("CanvasItemMaterial_1kice")
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_ov4de")
 script = ExtResource("2_otagc")

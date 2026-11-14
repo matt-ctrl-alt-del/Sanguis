@@ -59,19 +59,20 @@ script = ExtResource("1_lbhrr")
 
 [node name="player" parent="." unique_id=533371727 instance=ExtResource("3_p57ef")]
 z_index = 10
-position = Vector2(-22.999878, 545.99994)
+position = Vector2(-210, 626)
 scale = Vector2(0.7, 0.7)
 
 [node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1376601956]
-z_index = 2
+z_index = 20
 position = Vector2(-2.8571167, -1.5258789e-05)
 color = Color(1, 0, 0, 1)
-energy = 2.5
+energy = 3.0
 range_z_min = -4096
 range_layer_min = -1000
 shadow_enabled = true
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_662ny")
+texture_scale = 1.5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=149725808]
 
@@ -201,7 +202,7 @@ collision_mask = 2
 [node name="WaypointMarker" parent="Items/box" unique_id=2002451536 instance=ExtResource("16_1kice")]
 
 [node name="cone" parent="Items" unique_id=950048496 instance=ExtResource("9_kvpfn")]
-position = Vector2(424, 602)
+position = Vector2(336, 601)
 collision_layer = 2
 collision_mask = 2
 
@@ -249,7 +250,7 @@ explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_662ny")
 
 [node name="cone_particle" type="GPUParticles2D" parent="Items" unique_id=2088145296]
-position = Vector2(424, 603)
+position = Vector2(336, 601)
 scale = Vector2(0.5, 0.5)
 emitting = false
 amount = 12
@@ -264,6 +265,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=483289992]
 position = Vector2(1342, -206)
 shape = SubResource("RectangleShape2D_662ny")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=905457722]
+color = Color(0.581033, 0.58103293, 0.581033, 1)
 
 [connection signal="body_entered" from="Killzones/killzone_lava" to="." method="_on_killzone_lava_body_entered"]
 [connection signal="body_entered" from="Killzones/killzone_lava2" to="." method="_on_killzone_lava_2_body_entered"]

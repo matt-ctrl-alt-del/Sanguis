@@ -2865,34 +2865,35 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Control" unique_id=1313505097]
-
-[node name="Parallax2D" type="Parallax2D" parent="Control/ParallaxBackground" unique_id=1954513822]
+[node name="Parallax2D" type="Parallax2D" parent="Control" unique_id=1954513822]
+scale = Vector2(0.66, 0.66)
 scroll_scale = Vector2(0.5, 0.5)
 repeat_size = Vector2(1152, 648)
 repeat_times = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/ParallaxBackground/Parallax2D" unique_id=804885619]
+[node name="Sprite2D" type="Sprite2D" parent="Control/Parallax2D" unique_id=804885619]
 modulate = Color(0.9999998, 0.19858766, 0.09542706, 1)
 z_index = -1
 texture = ExtResource("2_0cso3")
 
-[node name="Parallax2D2" type="Parallax2D" parent="Control/ParallaxBackground" unique_id=180333538]
+[node name="Parallax2D2" type="Parallax2D" parent="Control" unique_id=180333538]
+scale = Vector2(0.66, 0.66)
 scroll_scale = Vector2(0.6, 0.6)
 repeat_size = Vector2(1152, 648)
 repeat_times = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/ParallaxBackground/Parallax2D2" unique_id=1427524138]
+[node name="Sprite2D" type="Sprite2D" parent="Control/Parallax2D2" unique_id=1427524138]
 modulate = Color(0.42318463, 9.0846794e-07, 3.128499e-07, 1)
 z_index = -2
 texture = ExtResource("3_2klcf")
 
-[node name="Parallax2D3" type="Parallax2D" parent="Control/ParallaxBackground" unique_id=2079742245]
+[node name="Parallax2D3" type="Parallax2D" parent="Control" unique_id=2079742245]
+scale = Vector2(0.66, 0.66)
 scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(1152, 648)
 repeat_times = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/ParallaxBackground/Parallax2D3" unique_id=1960769103]
+[node name="Sprite2D" type="Sprite2D" parent="Control/Parallax2D3" unique_id=1960769103]
 modulate = Color(0.63797385, 0.005437283, 5.7756904e-07, 1)
 z_index = -3
 position = Vector2(12, 1)

@@ -64,6 +64,10 @@ func _on_killzone_lava_body_entered(body: Node2D) -> void:
 	$CanvasLayer/HelpLabel.hide()
 	$CanvasLayer/DiedLabel.show()
 	get_tree().paused = true
+	$player/AnimatedSprite2D.play("take_damage")
+	await $player/AnimatedSprite2D.animation_finished
+	$player/AnimatedSprite2D.play("take_damage")
+	$player/AnimatedSprite2D.animation_finished
 	$player/AnimatedSprite2D.play("die")
 	$player/Camera2D.zoom = Vector2.ONE * 6
 	await get_tree().create_timer(1.0).timeout
@@ -78,6 +82,10 @@ func _on_killzone_lava_2_body_entered(body: Node2D) -> void:
 	$CanvasLayer/HelpLabel.hide()
 	$CanvasLayer/DiedLabel.show()
 	get_tree().paused = true
+	$player/AnimatedSprite2D.play("take_damage")
+	await $player/AnimatedSprite2D.animation_finished
+	$player/AnimatedSprite2D.play("take_damage")
+	$player/AnimatedSprite2D.animation_finished
 	$player/AnimatedSprite2D.play("die")
 	$player/Camera2D.zoom = Vector2.ONE * 6
 	await get_tree().create_timer(1.0).timeout
