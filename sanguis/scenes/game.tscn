@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bkulr8gujcfha" path="res://sprites/ui/background_progressbar.png" id="11_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://c0wa1i2wa1jpj" path="res://sprites/ui/main_progressbar.png" id="12_264po"]
 [ext_resource type="PackedScene" uid="uid://c7dqbjn5t4f4d" path="res://scenes/pause_menu.tscn" id="13_264po"]
+[ext_resource type="PackedScene" uid="uid://biivaws7kcg1b" path="res://scenes/waypoint_marker.tscn" id="16_1kice"]
 
 [sub_resource type="Gradient" id="Gradient_pa8r4"]
 offsets = PackedFloat32Array(0.28915662, 0.6807229)
@@ -31,6 +32,22 @@ height = 128
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="Gradient" id="Gradient_264po"]
+colors = PackedColorArray(0.61960787, 0.10980392, 0.10980392, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_005ff"]
+gradient = SubResource("Gradient_264po")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_662ny"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 75.0
+initial_velocity_max = 75.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 3.0
+color_ramp = SubResource("GradientTexture1D_005ff")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_662ny"]
 size = Vector2(224, 34)
 
@@ -42,7 +59,7 @@ script = ExtResource("1_lbhrr")
 
 [node name="player" parent="." unique_id=533371727 instance=ExtResource("3_p57ef")]
 z_index = 10
-position = Vector2(160.99998, 242.00003)
+position = Vector2(-22.999878, 545.99994)
 scale = Vector2(0.7, 0.7)
 
 [node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1376601956]
@@ -157,7 +174,16 @@ position = Vector2(-16, 239)
 collision_layer = 2
 collision_mask = 2
 
-[node name="Items" type="Node" parent="." unique_id=1210466166]
+[node name="Items" type="Node2D" parent="." unique_id=1080282196]
+
+[node name="box_particle" type="GPUParticles2D" parent="Items" unique_id=525026959]
+position = Vector2(-160, 29)
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_662ny")
 
 [node name="blood" parent="Items" unique_id=935713999 instance=ExtResource("7_gee14")]
 position = Vector2(76, 248)
@@ -165,25 +191,71 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 2
 
+[node name="WaypointMarker" parent="Items/blood" unique_id=215579915 instance=ExtResource("16_1kice")]
+
 [node name="box" parent="Items" unique_id=244760202 instance=ExtResource("8_0tnpc")]
 position = Vector2(-160, 28)
 collision_layer = 2
 collision_mask = 2
+
+[node name="WaypointMarker" parent="Items/box" unique_id=2002451536 instance=ExtResource("16_1kice")]
 
 [node name="cone" parent="Items" unique_id=950048496 instance=ExtResource("9_kvpfn")]
 position = Vector2(424, 602)
 collision_layer = 2
 collision_mask = 2
 
+[node name="WaypointMarker" parent="Items/cone" unique_id=2138187151 instance=ExtResource("16_1kice")]
+
 [node name="cube" parent="Items" unique_id=717928541 instance=ExtResource("10_dinhu")]
 position = Vector2(1135, 375)
 collision_layer = 2
 collision_mask = 2
 
+[node name="WaypointMarker" parent="Items/cube" unique_id=2055524920 instance=ExtResource("16_1kice")]
+
 [node name="diamond" parent="Items" unique_id=1888615982 instance=ExtResource("11_kvuet")]
 position = Vector2(1137, 278)
 collision_layer = 2
 collision_mask = 2
+
+[node name="WaypointMarker" parent="Items/diamond" unique_id=795403851 instance=ExtResource("16_1kice")]
+
+[node name="blood_particle" type="GPUParticles2D" parent="Items" unique_id=646400393]
+position = Vector2(76, 248)
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_662ny")
+
+[node name="diamond_particle" type="GPUParticles2D" parent="Items" unique_id=132488240]
+position = Vector2(1137, 278)
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_662ny")
+
+[node name="cube_particle" type="GPUParticles2D" parent="Items" unique_id=2104241500]
+position = Vector2(1135, 375)
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_662ny")
+
+[node name="cone_particle" type="GPUParticles2D" parent="Items" unique_id=2088145296]
+position = Vector2(424, 603)
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_662ny")
 
 [node name="exit" type="Area2D" parent="." unique_id=1758477085]
 collision_layer = 2

@@ -65,6 +65,9 @@ func _on_killzone_lava_body_entered(body: Node2D) -> void:
 	$CanvasLayer/DiedLabel.show()
 	get_tree().paused = true
 	$player/AnimatedSprite2D.play("die")
+	$player/Camera2D.zoom = Vector2.ONE * 6
+	await get_tree().create_timer(1.0).timeout
+	$player/Camera2D.zoom = Vector2.ONE * 9
 	await $player/AnimatedSprite2D.animation_finished
 	$CanvasLayer/DiedLabel.hide()
 	$CanvasLayer/Blood_transition.show()
@@ -76,6 +79,9 @@ func _on_killzone_lava_2_body_entered(body: Node2D) -> void:
 	$CanvasLayer/DiedLabel.show()
 	get_tree().paused = true
 	$player/AnimatedSprite2D.play("die")
+	$player/Camera2D.zoom = Vector2.ONE * 6
+	await get_tree().create_timer(1.0).timeout
+	$player/Camera2D.zoom = Vector2.ONE * 9
 	await $player/AnimatedSprite2D.animation_finished
 	$CanvasLayer/DiedLabel.hide()
 	$CanvasLayer/Blood_transition.show()
@@ -85,6 +91,7 @@ func _on_killzone_lava_2_body_entered(body: Node2D) -> void:
 func _on_blood_body_entered(body: Node2D) -> void:
 	$Items/blood.queue_free()
 	items_collected += 1
+	$Items/blood_particle.emitting = true
 	print("Items Collected: " + str(items_collected))
 	$CanvasLayer/HelpLabel.show()
 	$CanvasLayer/HelpLabel.text = "Items Collected: " + str(items_collected)
@@ -101,6 +108,7 @@ func _on_blood_body_entered(body: Node2D) -> void:
 func _on_box_body_entered(body: Node2D) -> void:
 	$Items/box.queue_free()
 	items_collected += 1
+	$Items/box_particle.emitting = true
 	print("Items Collected: " + str(items_collected))
 	$CanvasLayer/HelpLabel.show()
 	$CanvasLayer/HelpLabel.text = "Items Collected: " + str(items_collected)
@@ -117,6 +125,7 @@ func _on_box_body_entered(body: Node2D) -> void:
 func _on_cone_body_entered(body: Node2D) -> void:
 	$Items/cone.queue_free()
 	items_collected += 1
+	$Items/cone_particle.emitting = true
 	print("Items Collected: " + str(items_collected))
 	$CanvasLayer/HelpLabel.show()
 	$CanvasLayer/HelpLabel.text = "Items Collected: " + str(items_collected)
@@ -133,6 +142,7 @@ func _on_cone_body_entered(body: Node2D) -> void:
 func _on_cube_body_entered(body: Node2D) -> void:
 	$Items/cube.queue_free()
 	items_collected += 1
+	$Items/cube_particle.emitting = true
 	print("Items Collected: " + str(items_collected))
 	$CanvasLayer/HelpLabel.show()
 	$CanvasLayer/HelpLabel.text = "Items Collected: " + str(items_collected)
@@ -149,6 +159,7 @@ func _on_cube_body_entered(body: Node2D) -> void:
 func _on_diamond_body_entered(body: Node2D) -> void:
 	$Items/diamond.queue_free()
 	items_collected +=1
+	$Items/diamond_particle.emitting = true
 	print("Items Collected: " + str(items_collected))
 	$CanvasLayer/HelpLabel.show()
 	$CanvasLayer/HelpLabel.text = "Items Collected: " + str(items_collected)
@@ -164,6 +175,9 @@ func _on_diamond_body_entered(body: Node2D) -> void:
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	get_tree().paused = true
+	$player/Camera2D.zoom = Vector2.ONE * 4
+	await get_tree().create_timer(1.0).timeout
+	$player/Camera2D.zoom = Vector2.ONE * 2
 	$CanvasLayer/Blood_transition.show()
 	await get_tree().create_timer(1.0).timeout
 	$CanvasLayer/Blood_transition/AnimatedSprite2D.play("fade_in")
