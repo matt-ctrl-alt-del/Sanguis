@@ -8,6 +8,8 @@ func _ready() -> void:
 	$CanvasLayer/TimerLabel.visible = Global.show_timer
 	$player/Camera2D.make_current()
 	$CanvasLayer/Blood_effect_feedback.hide()
+	$CanvasLayer/NpcLabel.hide()
+	$Control/AnimatedSprite2D.hide()
 	$CanvasLayer/DiedLabel.hide()
 	$CanvasLayer/Tracker/HBoxContainer/blood.modulate.a = 0.25
 	$CanvasLayer/Tracker/HBoxContainer/box.modulate.a = 0.25
@@ -182,6 +184,7 @@ func _on_diamond_body_entered(body: Node2D) -> void:
 	$CanvasLayer/HelpLabel.hide()
 
 func _on_exit_body_entered(body: Node2D) -> void:
+	$Control/AnimatedSprite2D.show()
 	get_tree().paused = true
 	$player/Camera2D.zoom = Vector2.ONE * 4
 	await get_tree().create_timer(1.0).timeout
@@ -192,3 +195,17 @@ func _on_exit_body_entered(body: Node2D) -> void:
 	await $CanvasLayer/Blood_transition/AnimatedSprite2D.animation_finished
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func _on_npc_body_entered(body: Node2D) -> void:
+	$CanvasLayer/NpcLabel.show()
+	$CanvasLayer/NpcLabel.text = "Go and collect 3 items and get out of here!"
+
+func _on_npc_body_exited(body: Node2D) -> void:
+	$CanvasLayer/NpcLabel.hide()
+
+func _on_npc_2_body_entered(body: Node2D) -> void:
+	$CanvasLayer/NpcLabel.show()
+	$CanvasLayer/NpcLabel.text = "Go and collect 2 more items and get out of here!"
+
+func _on_npc_2_body_exited(body: Node2D) -> void:
+	$CanvasLayer/NpcLabel.hide()

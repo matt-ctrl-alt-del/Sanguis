@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://c0wa1i2wa1jpj" path="res://sprites/ui/main_progressbar.png" id="12_264po"]
 [ext_resource type="PackedScene" uid="uid://c7dqbjn5t4f4d" path="res://scenes/pause_menu.tscn" id="13_264po"]
 [ext_resource type="PackedScene" uid="uid://biivaws7kcg1b" path="res://scenes/waypoint_marker.tscn" id="16_1kice"]
+[ext_resource type="PackedScene" uid="uid://mybwn0vrht7u" path="res://scenes/npc.tscn" id="21_5newe"]
+[ext_resource type="Texture2D" uid="uid://d1k13epne0xau" path="res://sprites/thanks.png" id="22_37s47"]
 
 [sub_resource type="Gradient" id="Gradient_pa8r4"]
 offsets = PackedFloat32Array(0.28915662, 0.6807229)
@@ -51,6 +53,35 @@ color_ramp = SubResource("GradientTexture1D_005ff")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_662ny"]
 size = Vector2(224, 34)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt5mj"]
+atlas = ExtResource("22_37s47")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1j6l"]
+atlas = ExtResource("22_37s47")
+region = Rect2(1152, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl11u"]
+atlas = ExtResource("22_37s47")
+region = Rect2(2304, 0, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_662ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt5mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1j6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl11u")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="game" type="Node2D" unique_id=1597199877]
 modulate = Color(0.65834004, 0.6583399, 0.6583399, 1)
 script = ExtResource("1_lbhrr")
@@ -59,7 +90,7 @@ script = ExtResource("1_lbhrr")
 
 [node name="player" parent="." unique_id=533371727 instance=ExtResource("3_p57ef")]
 z_index = 10
-position = Vector2(449.99994, 534)
+position = Vector2(1229.9999, -49.99994)
 scale = Vector2(0.7, 0.7)
 
 [node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1376601956]
@@ -77,6 +108,7 @@ texture_scale = 1.5
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=149725808]
 
 [node name="Blood_transition" parent="CanvasLayer" unique_id=199575176 instance=ExtResource("4_u5sy4")]
+visible = false
 z_index = 4096
 
 [node name="DiedLabel" type="Label" parent="CanvasLayer" unique_id=1177951910]
@@ -132,6 +164,7 @@ texture = ExtResource("7_kvuet")
 offset = Vector2(100, 53)
 
 [node name="Blood_effect_feedback" parent="CanvasLayer" unique_id=119265112 instance=ExtResource("10_ca42v")]
+visible = false
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=586611655]
 modulate = Color(0.47026944, 0, 0.099758156, 1)
@@ -144,6 +177,7 @@ texture_under = ExtResource("11_ssvqc")
 texture_progress = ExtResource("12_264po")
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1615165541 instance=ExtResource("13_264po")]
+visible = false
 
 [node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=999062903]
 anchors_preset = 3
@@ -157,6 +191,22 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_p57ef")
 theme_override_font_sizes/font_size = 25
+
+[node name="NpcLabel" type="Label" parent="CanvasLayer" unique_id=928946827]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -49.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_p57ef")
+theme_override_font_sizes/font_size = 25
+text = "Test
+"
 
 [node name="Killzones" type="Node" parent="." unique_id=1093957074]
 
@@ -264,6 +314,30 @@ shape = SubResource("RectangleShape2D_662ny")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=905457722]
 color = Color(0.581033, 0.58103293, 0.581033, 1)
 
+[node name="npc" parent="." unique_id=1445507839 instance=ExtResource("21_5newe")]
+position = Vector2(160, 632)
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="npc2" parent="." unique_id=1775985083 instance=ExtResource("21_5newe")]
+position = Vector2(604, 53)
+scale = Vector2(0.7, 0.7)
+
+[node name="Control" type="Control" parent="." unique_id=1236382370]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control" unique_id=234616625]
+position = Vector2(574, 322)
+sprite_frames = SubResource("SpriteFrames_662ny")
+
 [connection signal="body_entered" from="Killzones/killzone_lava" to="." method="_on_killzone_lava_body_entered"]
 [connection signal="body_entered" from="Killzones/killzone_lava2" to="." method="_on_killzone_lava_2_body_entered"]
 [connection signal="body_entered" from="Items/blood" to="." method="_on_blood_body_entered"]
@@ -272,3 +346,7 @@ color = Color(0.581033, 0.58103293, 0.581033, 1)
 [connection signal="body_entered" from="Items/cube" to="." method="_on_cube_body_entered"]
 [connection signal="body_entered" from="Items/diamond" to="." method="_on_diamond_body_entered"]
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
+[connection signal="body_entered" from="npc" to="." method="_on_npc_body_entered"]
+[connection signal="body_exited" from="npc" to="." method="_on_npc_body_exited"]
+[connection signal="body_entered" from="npc2" to="." method="_on_npc_2_body_entered"]
+[connection signal="body_exited" from="npc2" to="." method="_on_npc_2_body_exited"]

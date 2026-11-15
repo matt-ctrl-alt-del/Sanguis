@@ -4,12 +4,46 @@
 [ext_resource type="FontFile" uid="uid://b8x8abus3a65k" path="res://resoources/Saltblackcombat-Regular.ttf" id="2_1wrf5"]
 [ext_resource type="Script" uid="uid://bw27gp5dhw0e1" path="res://scripts/prologue_label.gd" id="3_1wrf5"]
 [ext_resource type="PackedScene" uid="uid://ol8ra8p82q2t" path="res://scenes/Fade_transition.tscn" id="3_6e114"]
+[ext_resource type="Texture2D" uid="uid://c2jnje8ef3tsp" path="res://sprites/prologue/potion1.png" id="5_470yy"]
+[ext_resource type="Texture2D" uid="uid://bpu3q3h3gxbfw" path="res://sprites/prologue/potion2.png" id="6_l6q3c"]
+[ext_resource type="Texture2D" uid="uid://b05mf2wogepb5" path="res://sprites/prologue/potion3.png" id="7_oigyj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3ep0"]
+atlas = ExtResource("5_470yy")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18dgh"]
+atlas = ExtResource("6_l6q3c")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qt1a"]
+atlas = ExtResource("7_oigyj")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_662ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3ep0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18dgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qt1a")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Prologue" type="Control" unique_id=2096140412]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8byya")
@@ -17,10 +51,16 @@ script = ExtResource("1_8byya")
 [node name="Prologue_Label" type="Label" parent="." unique_id=38178991]
 z_index = 100
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 25.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -50.0
+offset_right = -168.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
 offset_transform_enabled = true
-offset_transform_position = Vector2(30, 30)
 theme_override_colors/font_color = Color(0.50274503, 0.048560202, 8.663535e-07, 1)
 theme_override_fonts/font = ExtResource("2_1wrf5")
 theme_override_font_sizes/font_size = 30
@@ -39,3 +79,7 @@ color = Color(0, 0, 0, 1)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1534745096]
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=1530767139 instance=ExtResource("3_6e114")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=653505684]
+sprite_frames = SubResource("SpriteFrames_662ny")
+autoplay = "default"

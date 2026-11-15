@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bn6ibjnshs8of"]
+
+[ext_resource type="AudioStream" uid="uid://g4g482ratmfr" path="res://resoources/sanguis_music.wav" id="1_nbeep"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1119217785]
+stream = ExtResource("1_nbeep")
+autoplay = true

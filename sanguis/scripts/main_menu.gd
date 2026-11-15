@@ -1,8 +1,6 @@
 extends Control
 
 func _ready() -> void:
-	$map/Door/Door1/Camera2D.enabled = false
-	$map/Door/Door2/Camera2D.enabled = false
 	$CanvasLayer/Fade_transition.hide()
 	$CanvasLayer/Blood_transition.hide()
 	$VBoxContainer2.hide()

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://mybwn0vrht7u"]
+
+[ext_resource type="Texture2D" uid="uid://cf733im8rhf1a" path="res://sprites/npc/npc demon-Sheet.png" id="1_nh2m4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_662ny"]
+size = Vector2(95, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abqhh"]
+atlas = ExtResource("1_nh2m4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv78h"]
+atlas = ExtResource("1_nh2m4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_662ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abqhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv78h")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="npc" type="Area2D" unique_id=1775985083]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1809155631]
+position = Vector2(-22.5, -29.5)
+shape = SubResource("RectangleShape2D_662ny")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1145402806]
+sprite_frames = SubResource("SpriteFrames_662ny")
+autoplay = "default"
