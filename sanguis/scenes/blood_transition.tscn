@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1sfv3f21d65b"]
 
-[ext_resource type="Texture2D" uid="uid://b6rsmmrqpf0sd" path="res://sprites/blood_transition_transparent-Sheet.png" id="1_d06n5"]
+[ext_resource type="Texture2D" uid="uid://b6rsmmrqpf0sd" path="res://sprites/ui/blood_transition_transparent-Sheet.png" id="1_d06n5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_djaog"]
 atlas = ExtResource("1_d06n5")
@@ -97,9 +97,11 @@ animations = [{
 
 [node name="Blood_transition" type="Control" unique_id=199575176]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
