@@ -34,10 +34,6 @@ D - Move right.
 <h3> Tools: </h3>
 I used Godot and Gdscript, for the art I used Aseprite/Libresprite, and I also used REAPER for the audio. 
 
-<h3> Credits: </h3>
-Tilemap Template - https://patrik-arts.itch.io/tileset-templates, 
-Font used - https://www.dafont.com/saltblack-combat.font
-
 <h3> AI Disclosure: </h3>
 No AI was used in writing the code or making the art.
 
