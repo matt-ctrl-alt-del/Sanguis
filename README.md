@@ -31,6 +31,19 @@ A - Move left,
 S - Move down,
 D - Move right.
 
+<h3> Tools: </h3>
+I used Godot and Gdscript, for the art I used Aseprite/Libresprite, and I also used REAPER for the audio. 
+
+<h3> Credits: </h3>
+Tilemap Template - https://patrik-arts.itch.io/tileset-templates, 
+Font used - https://www.dafont.com/saltblack-combat.font
+
+<h3> AI Disclosure: </h3>
+No AI was used in writing the code or making the art.
+
+<h3> Acknowledgments: </h3>
+This game is a project for #terra (Week #3-4) @Hack Club!
+
 <h3> Screenshots: </h3>
 <img width="1140" height="640" alt="Screenshot From 2026-11-06 22-40-48" src="https://github.com/user-attachments/assets/ddbeddff-b353-4e3e-88b7-089568c00184" />
 <img width="1140" height="640" alt="Screenshot From 2026-11-06 22-40-19" src="https://github.com/user-attachments/assets/45b0ce01-cd46-4ca7-80da-784f4183b107" />
